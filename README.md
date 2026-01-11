@@ -17,29 +17,29 @@
 On your VS Code or Local command promt and Enter the following:
 
  ### 1️⃣ Clone the repository
-```bash git clone https://github.com/nitxoxo/todo-django-app.git ``` 
+```git clone https://github.com/nitxoxo/todo-django-app.git```
 
 ### 2️⃣ Move into the directory
-```bash cd todo-django-app ```
+```cd todo-django-app```
 
 ### 2️⃣ Create and activate a virtual environment
-```bash python -m venv venv ```
+```python -m venv venv```
 
 *Then to actiate env Enter*
 -Windows-
-```bash venv\Scripts\activate ```
+```venv\Scripts\activate```
 
 -macOS / Linux-
-```bash source venv/bin/activate ```
+```source venv/bin/activate```
 
 ### 3️⃣ Install required dependencies
-```bash pip install -r requirements.txt ```
+```pip install -r requirements.txt```
 
 ### 4️⃣ Apply database migrations
-```bash python manage.py migrate ```
+```python manage.py migrate```
 
 ### 5️⃣ Run the Django development server
-```bash python manage.py runserver ```
+```python manage.py runserver```
 
 ### 5️⃣ Open your browser and visit
 --> http://127.0.0.1:8000/
@@ -49,7 +49,7 @@ On your VS Code or Local command promt and Enter the following:
 ### 👉 TO MAKE YOUR WEBPAGE PUBLIC ON A TEMPROARY SERVER
 --- DOWNLOAD NGROK at https://ngrok.com/download/windows
 --- REGISTER at https://ngrok.com/
---> RUN ```bash ngrok http 8000 ``` in your local command prompt
+--> RUN ```ngrok http 8000``` in your local command prompt
 
 ---
 
@@ -128,6 +128,7 @@ Thank you!
 XOXO 
 
 ***
+
 
 
 
