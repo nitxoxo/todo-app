@@ -43,7 +43,14 @@ python manage.py runserver
 
 ---
 
-YOU CAN ALSO VISIT MY Ngrok PUBLIC URL-
+### TO MAKE YOUR WEBPAGE PUBLIC ON A TEMPROARY SERVER
+--- DOWNLOAD NGROK at https://ngrok.com/download/windows
+--- REGISTER at https://ngrok.com/
+--> RUN ngrok http 8000 in your local command prompt
+
+---
+
+### YOU CAN ALSO VISIT MY Ngrok PUBLIC URL-
 https://letha-depletory-lakenya.ngrok-free.dev/
 (Note- This URL is temprowary server therefore it will work only when my local server is running. I'll will try keep the server running most of the time, so if the page dosen't respond, You can try reloading after a while.)
 
@@ -118,6 +125,7 @@ Thank you!
 XOXO 
 
 ***
+
 
 
 
