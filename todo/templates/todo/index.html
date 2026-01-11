@@ -50,7 +50,7 @@
     }
 
     .subtitle {
-      font-size: 0.95rem;
+      font-size: 1.7rem;
       font-weight: 600;
       color: #6a78b8;
       letter-spacing: 0.6px;
@@ -234,7 +234,6 @@
       justify-content: center;
     }
 
-    /* Green pastel square for complete-btn */
     .complete-btn {
       background: #d7f0d8; /* soft pastel green */
       box-shadow: 0 2px 6px rgba(110, 180, 110, 0.25);
@@ -331,8 +330,7 @@
       align-items: center;
     }
 
-    /* 🎊 Floating banner */
-    #awesome-banner {
+    {
       position: fixed;
       top: -60px;
       left: 50%;
@@ -357,7 +355,7 @@
       ALMOST THE BESHTTT TODO APP <span class="emoji">😉</span>
     </h1>
     <div class="subtitle">
-      YOUR BESTIE IN MANAGING YOUR DAILY TASKS <span class="emoji">🫶</span>
+      {{ motivational_quotes|random }} <span class="emoji">🫶</span>
     </div>
   </div>
 
@@ -388,7 +386,9 @@
                {% if task.is_completed %}completed{% endif %}">
 
             <h3>
-              {% if task.priority == 'low' %}🌱{% elif task.priority == 'medium' %}🌸{% elif task.priority == 'high' %}🔥{% endif %}
+              {% if task.priority == 'low' %}🌱
+              {% elif task.priority == 'medium' %}🌸
+              {% elif task.priority == 'high' %}🔥{% endif %}
               {{ task.title }}
             </h3>
 
@@ -459,7 +459,8 @@
             <label>Priority</label>
             <div style="position: relative;">
               {{ forms.priority }}
-              <span style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); pointer-events: none;">👉</span>
+              <span style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); pointer-events: none;">
+                👉</span>
             </div>
           </div>
         </div>
@@ -493,7 +494,16 @@
     }
 
     const titleInput = document.querySelector('input[name="title"]');
-    const placeholderMessages = ["Add your task here… 💡", "Don’t forget to smile! 😊", "Let’s crush it today! 🔥"];
+    const placeholderMessages = ["Add your task here… 💡", 
+    "Don’t forget to smile! 😊", 
+    "Let’s crush it today! 🔥", 
+    "You’ve got this! 💪",
+    "Make today amazing! 🌟",
+    "Stay positive and productive! 🌈",
+    " Keep pushing forward! 🚀",
+    "Your goals are within reach! 🎯",
+    "Small steps lead to big wins! 🏆",
+    "Believe in yourself! ✨"];
     let i = 0;
     function cyclePlaceholder() {
       titleInput.placeholder = placeholderMessages[i];

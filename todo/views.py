@@ -3,22 +3,16 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils.timezone import now
-
 from .forms import RegisterForm, TodoForm
 from .models import Todo
 
-# ===============================
-# MAIN TODO LIST VIEW
-# ===============================
 @login_required
 def index(request):
     filter_type = request.GET.get("filter", "all")
-    priority_filter = request.GET.get("priority", None)  # 👈 New priority GET param
+    priority_filter = request.GET.get("priority", None) 
 
-    # Start with all tasks for the user
     todos = Todo.objects.filter(user=request.user)
 
-    # Filter by type
     if filter_type == "today":
         todos = todos.filter(due_date__date=now().date(), is_completed=False)
     elif filter_type == "completed":
@@ -26,7 +20,6 @@ def index(request):
     else:
         todos = todos.filter(is_completed=False)
 
-    # Filter by priority
     if priority_filter in ["low", "medium", "high"]:
         todos = todos.filter(priority=priority_filter)
 
@@ -45,14 +38,38 @@ def index(request):
         "list": todos,
         "forms": form,
         "filter": filter_type,
-        "priority_filter": priority_filter,  # 👈 Pass to template to highlight dropdown
+        "priority_filter": priority_filter, 
         "now": now(),
         "overdue_messages": [
             "💪 Feeling lazy? One small step and you're unstoppable!",
             "⏳ Hey bestie, future you will thank you for finishing this now!",
             "🌸 Procrastination check! Take a breath and power through 💥",
             "🫶 You got this! Let’s turn “later” into “done”",
-        ],
+            "🔥 Crush those tasks and own your day!",
+            "🚀 Blast through your to-do list like the superstar you are!",
+            "🌟 Every task you finish is a win! Keep going!",
+            "💡 Small steps lead to big achievements. Start now!",
+            " 🎯 Focus up and hit those goals out of the park!",
+            "🛠️ Tackle that task like the champ you are!"],
+            
+        "motivational_quotes": [
+            "🎯The secret of getting ahead is getting started – Mark Twain", 
+            "🔥It's not whether you get knocked down, it's whether you get up – Vince Lombardi", 
+            "⏳The future depends on what you do today – Mahatma Gandhi",
+            "💪Don't watch the clock; do what it does. Keep going – Sam Levenson",
+            " 🌟The way to get started is to quit talking and begin doing – Walt Disney",
+            " 🛠️Believe you can and you're halfway there – Theodore Roosevelt",
+            " 🚀Start where you are. Use what you have. Do what you can – Arthur Ashe",
+            " 💡You are never too old to set another goal or to dream a new dream – C.S. Lewis",
+            " 🫶Act as if what you do makes a difference. It does – William James",
+            " 🌸Success is not final, failure is not fatal: It is the courage to continue that counts",
+            " 🗝️Hardships often prepare ordinary people for an extraordinary destiny – C.S. Lewis",
+            " 🧭Don't limit your challenges. Challenge your limits – Jerry Dunn",
+            " 🌈The only way to do great work is to love what you do – Steve Jobs",
+            " 💥Dream big and dare to fail – Norman Vaughan",
+            " 🕰️Keep your eyes on the stars, and your feet on the ground – Theodore Roosevelt",
+            " 🌻You miss 100% of the shots you don't take – Wayne Gretzky"
+            ],
     })
 
 
@@ -76,7 +93,7 @@ def edit_task(request, id):
         form = TodoForm(request.POST, instance=task)
         if form.is_valid():
             form.save()
-            messages.success(request, "Task updated successfully ✨")
+            messages.success(request, "✨ Task updated successfully ✨")
             return redirect('index')
     else:
         # Pre-fill form with existing task data
@@ -87,10 +104,6 @@ def edit_task(request, id):
         "task": task
     })
 
-
-# ===============================
-# REGISTER VIEW
-# ===============================
 def register_view(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
@@ -103,9 +116,6 @@ def register_view(request):
 
     return render(request, "todo/register.html", {'form': form})
 
-# ===============================
-# LOGIN VIEW
-# ===============================
 def Login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -121,21 +131,14 @@ def Login_view(request):
 
     return render(request, "todo/login.html")
 
-# ===============================
-# LOGOUT VIEW
-# ===============================
 @login_required
 def Logout_view(request):
     logout(request)
     return redirect('login')
 
-# ===============================
-# REMOVE TODO
-# ===============================
 @login_required
 def remove(request, item_id):
     item = get_object_or_404(Todo, id=item_id, user=request.user)
     item.delete()
     messages.info(request, "Item removed! 🗑️")
     return redirect('index')
-

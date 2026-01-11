@@ -18,7 +18,6 @@ from django.contrib import admin
 from django.urls import path
 from todo import views
 
-# Optional: namespacing for future-proofing
 app_name = "todo"
 
 urlpatterns = [
