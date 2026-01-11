@@ -97,18 +97,18 @@ This application helps users manage daily tasks efficiently by allowing them to 
 
 ---
 
-##🤝 Contributions are welcome.
+## 🤝 Contributions are welcome.
 Feel free to fork this repository and submit a pull requests.
 YOU CAN REACH ME ON - nithushree1668@gmail.com
 
 ---
 
-##📄 License
+## 📄 License
 This project is created for learning and educational purposes.
 
 ---
 
-👤 Author
+## 👤 Author
 nitxoxo
 GitHub: https://github.com/nitxoxo
 
@@ -118,6 +118,7 @@ Thank you!
 XOXO 
 
 ***
+
 
 
 
