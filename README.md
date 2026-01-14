@@ -48,7 +48,9 @@ On your VS Code or Local command promt and Enter the following:
 
 ### 👉 TO MAKE YOUR WEBPAGE PUBLIC ON A TEMPROARY SERVER
 --- DOWNLOAD NGROK at https://ngrok.com/download/windows
+
 --- REGISTER at https://ngrok.com/
+
 --> RUN ```ngrok http 8000``` in your local command prompt
 
 ---
@@ -128,6 +130,7 @@ Thank you!
 XOXO 
 
 ***
+
 
 
 
