@@ -58,7 +58,7 @@ On your VS Code or Local command promt and Enter the following:
 ### 👉 YOU CAN ALSO VISIT MY Ngrok PUBLIC URL-
 https://letha-depletory-lakenya.ngrok-free.dev/register/
 
-(Note- This URL is temprowary server therefore it will work only when my local server is running. I'll will try keep the server running most of the time, so if the page dosen't respond, You can try reloading after a while.)
+(Note- This URL is temprowary server therefore it will work only when my local server is running. So you'd be able to access my website if you're lucky. 😺)
 
 ---
 
@@ -143,6 +143,7 @@ Thank you!
 XOXO 
 
 ***
+
 
 
 
