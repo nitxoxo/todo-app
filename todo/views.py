@@ -33,6 +33,10 @@ def index(request):
             return redirect("index")
     else:
         form = TodoForm()
+        
+    total_count = todos.count()
+    completed_count = todos.filter(is_completed=True).count()
+
 
     return render(request, "todo/index.html", {
         "list": todos,
@@ -40,6 +44,8 @@ def index(request):
         "filter": filter_type,
         "priority_filter": priority_filter, 
         "now": now(),
+        "total_count": total_count,
+        "completed_count": completed_count,
         "overdue_messages": [
             "💪 Feeling lazy? One small step and you're unstoppable!",
             "⏳ Hey bestie, future you will thank you for finishing this now!",
@@ -53,22 +59,22 @@ def index(request):
             "🛠️ Tackle that task like the champ you are!"],
             
         "motivational_quotes": [
-            "🎯The secret of getting ahead is getting started – Mark Twain", 
-            "🔥It's not whether you get knocked down, it's whether you get up – Vince Lombardi", 
-            "⏳The future depends on what you do today – Mahatma Gandhi",
-            "💪Don't watch the clock; do what it does. Keep going – Sam Levenson",
-            " 🌟The way to get started is to quit talking and begin doing – Walt Disney",
-            " 🛠️Believe you can and you're halfway there – Theodore Roosevelt",
-            " 🚀Start where you are. Use what you have. Do what you can – Arthur Ashe",
-            " 💡You are never too old to set another goal or to dream a new dream – C.S. Lewis",
-            " 🫶Act as if what you do makes a difference. It does – William James",
-            " 🌸Success is not final, failure is not fatal: It is the courage to continue that counts",
-            " 🗝️Hardships often prepare ordinary people for an extraordinary destiny – C.S. Lewis",
-            " 🧭Don't limit your challenges. Challenge your limits – Jerry Dunn",
-            " 🌈The only way to do great work is to love what you do – Steve Jobs",
-            " 💥Dream big and dare to fail – Norman Vaughan",
-            " 🕰️Keep your eyes on the stars, and your feet on the ground – Theodore Roosevelt",
-            " 🌻You miss 100% of the shots you don't take – Wayne Gretzky"
+            "🎯The secret of getting ahead is getting started – Mark Twain🎯", 
+            "🔥It's not whether you get knocked down, it's whether you get up – Vince Lombardi🔥", 
+            "⏳The future depends on what you do today – Mahatma Gandhi⏳",
+            "💪Don't watch the clock; do what it does. Keep going – Sam Levenson💪",
+            " 🌟The way to get started is to quit talking and begin doing – Walt Disney🌟",
+            " 🛠️Believe you can and you're halfway there – Theodore Roosevelt🛠️",
+            " 🚀Start where you are. Use what you have. Do what you can – Arthur Ashe🚀",
+            " 💡You are never too old to set another goal or to dream a new dream – C.S. Lewis💡",
+            " 🫶Act as if what you do makes a difference. It does – William James🫶",
+            " 🌸Success is not final, failure is not fatal: It is the courage to continue that counts🌸",
+            " 🗝️Hardships often prepare ordinary people for an extraordinary destiny – C.S. Lewis🗝️",
+            " 🧭Don't limit your challenges. Challenge your limits – Jerry Dunn🧭",
+            " 💥The only way to do great work is to love what you do – Steve Jobs💥",
+            " 🌈Dream big and dare to fail – Norman Vaughan🌈",
+            " 🕰️Keep your eyes on the stars, and your feet on the ground – Theodore Roosevelt🕰️",
+            " 🌻You miss 100% of the shots you don't take – Wayne Gretzky🌻",
             ],
     })
 
@@ -95,9 +101,9 @@ def edit_task(request, id):
             form.save()
             messages.success(request, "✨ Task updated successfully ✨")
             return redirect('index')
-    else:
-        # Pre-fill form with existing task data
-        form = TodoForm(instance=task)
+        else:
+            # Pre-fill form with existing task data
+            form = TodoForm(instance=task)
 
     return render(request, "todo/edit_task.html", {
         "form": form,

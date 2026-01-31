@@ -57,11 +57,6 @@
       text-transform: uppercase;
     }
 
-    .subtitle .emoji {
-      font-size: 2.6rem;
-      margin-left: 6px;
-    }
-
     .row {
       display: flex;
       gap: 30px;
@@ -218,15 +213,16 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 2px 6px rgba(110, 180, 110, 0.25);
     }
 
     .remove-btn { background: #dbe4ff; }
-    .edit-btn { background: #ffd6e0; }
+    .edit-btn { background: #f9b6d1; }
     .complete-btn { background: #e6fff3; }
 
     .complete-btn {
       background: #e6fff3;
-      margin-left: 8px;  /* spacing between tick and pencil */
+      margin-left: 8px;
       padding: 8px 12px;
       border-radius: 16px;
       display: inline-flex;
@@ -345,17 +341,136 @@
       transition: top 0.6s ease;
       z-index: 999;
     }
+
+    .messages-container {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      }
+    .django-message {
+      background: linear-gradient(135deg, #8fa8ff, #7a9dfc);
+      color: white;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800;
+      padding: 12px 22px;
+      border-radius: 26px;
+      box-shadow: 0 6px 14px rgba(122, 157, 252, 0.35);
+      animation: slideDown 0.6s ease, fadeOut 0.6s ease 3.5s forwards;
+    }
+
+    .task-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 22px rgba(255, 182, 204, 0.45);
+    }
+
+    .remove-btn:hover { background: #ffc2d1; }
+    .edit-btn:hover { background: #ffc4d3; }
+    .complete-btn:hover { background: #b9eac1; }
+    
+    .remove-btn:active,
+    .edit-btn:active,
+    .complete-btn:active {
+      transform: scale(0.92);
+    }
+
+    .task-card h3 {
+      font-size: 1.35rem;
+    }
+
+    .task-meta {
+      opacity: 0.75;
+    }
+
+    .task-card.overdue {
+      background: linear-gradient(135deg, #ffe1e6, #ffd3dc);
+    }
+    
+    .progress-ring {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: linear-gradient(135deg, #8fa8ff, #7a9dfc);
+      color: white;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800;
+      box-shadow: 0 12px 26px rgba(122, 157, 252, 0.45);
+      z-index: 9999;
+    }
+    
+    .progress-number {
+      font-size: 2rem;
+      line-height: 1;
+    }
+    
+    .progress-total {
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+    
+    .progress-label {
+      font-size: 0.75rem;
+      margin-top: 4px;
+      letter-spacing: 0.6px;
+    }
+
+    .task-card.deleting {
+      opacity: 0;
+      transform: translateX(80px);
+      transition: all 0.4s ease;
+    }
+
+
+
+
+
+
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateY(-20px); }
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .add-task-container {
+    max-width: 100%;
+  }
+
+  h1.main-title {
+    font-size: 2rem;
+  }
+}
+
+
+    
   </style>
 </head>
 
 <body>
+
 
   <div class="title-wrapper">
     <h1 class="main-title">
       ALMOST THE BESHTTT TODO APP <span class="emoji">😉</span>
     </h1>
     <div class="subtitle">
-      {{ motivational_quotes|random }} <span class="emoji">🫶</span>
+      {{ motivational_quotes|random }}
     </div>
   </div>
 
@@ -475,6 +590,8 @@
     </div>
 
   </div>
+  
+
 
   <!-- 🎊 CONFETTI + DELAY REDIRECT -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -503,7 +620,10 @@
     " Keep pushing forward! 🚀",
     "Your goals are within reach! 🎯",
     "Small steps lead to big wins! 🏆",
-    "Believe in yourself! ✨"];
+    "Believe in yourself! ✨",
+    " Time to be awesome! 😎",
+    " Seize the day! 🌞"
+    ];
     let i = 0;
     function cyclePlaceholder() {
       titleInput.placeholder = placeholderMessages[i];
@@ -521,7 +641,57 @@
     });
   </script>
 
-  <div id="awesome-banner">🎉 All done! Time to relax 🫶</div>
+  <div id="awesome-banner">🎉Keep Calm! You Got This🫶</div>
+
+  {% if messages %}
+  <div class="messages-container">
+    {% for message in messages %}
+      <div class="django-message {{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+  <!-- PROGRESS RING -->
+
+  {% if total_count > 0 %}
+  <div class="progress-ring">
+    <span class="progress-number">{{ completed_count }}</span>
+    <span class="progress-total">/ {{ total_count }}</span>
+    <div class="progress-label">✨DONE✨</div>
+  </div>
+  {% endif %}
+
+  <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const ring = document.querySelector(".progress-ring");
+    if (ring) {
+      ring.animate(
+        [{ transform: "scale(0.8)", opacity: 0 }, { transform: "scale(1)", opacity: 1 }],
+        { duration: 500, easing: "ease-out" }
+      );
+    }
+  });
+  </script>
+
+  <script>
+  document.querySelectorAll('.remove-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+
+      const card = btn.closest('.task-card');
+      if (!card) return;
+
+      card.classList.add('deleting');
+
+      setTimeout(() => {
+        btn.closest('form').submit();
+      }, 400);
+    });
+  });
+  </script>
+
+
 
 </body>
 </html>

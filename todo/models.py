@@ -61,3 +61,4 @@ class Todo(models.Model):
             due = timezone.make_aware(due, timezone.get_default_timezone())
 
         return due < now
+
