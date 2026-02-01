@@ -55,10 +55,9 @@ On your VS Code or Local command promt and Enter the following:
 
 ---
 
-### 👉 YOU CAN ALSO VISIT MY Ngrok PUBLIC URL-
-https://letha-depletory-lakenya.ngrok-free.dev/register/
-
-(Note- This URL is temprowary server therefore it will work only when my local server is running. So you'd be able to access my website if you're lucky. 😺)
+### 👉 YOU CAN ALSO VISIT MY LIVE WEBSITE ON RENDER-
+https://todo-app-lq4o.onrender.com/register/
+(Note- This URL is hosted by a free service therefore due to inactivity, it might cold start and take about 30-60 seconds to enter the webpage. Please be patient! 😺)
 
 ---
 
@@ -143,6 +142,7 @@ Thank you!
 XOXO 
 
 ***
+
 
 
 
