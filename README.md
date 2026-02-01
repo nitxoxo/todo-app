@@ -141,10 +141,13 @@ GitHub: https://github.com/nitxoxo
 
 ---
 
-Thank you!
-XOXO 
+**Thank you!**
+**BYEEE**
+<img width="370" height="250" alt="image" src="https://github.com/user-attachments/assets/3c2ba00a-564a-46bb-97bc-d69a4b68e7fc" />
+
 
 ***
+
 
 
 
