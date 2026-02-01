@@ -60,7 +60,7 @@ On your VS Code or Local command promt and Enter the following:
 ###  👉 YOU CAN ALSO VISIT MY LIVE WEBSITE ON RENDER-
 https://todo-app-lq4o.onrender.com/register/
 
-(**Note**: This site is hosted on a free service, so it may take 30–60 seconds to load after inactivity due to a cold start. Thanks for your patience! 😊)
+(**Note**: This website runs on a free hosting service. If it’s been inactive, the first load may take 30–60 seconds. Please hang tight! 😄)
 
 ---
 
@@ -145,6 +145,7 @@ Thank you!
 XOXO 
 
 ***
+
 
 
 
