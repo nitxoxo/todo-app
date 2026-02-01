@@ -145,10 +145,13 @@ GitHub: https://github.com/nitxoxo
 
 **Thank you!!! DO VISIT: https://todo-app-lq4o.onrender.com/register/**
 
-<img width="220" height="150" alt="image" src="https://github.com/user-attachments/assets/a0aa25f5-10b0-4be9-a3a3-26baec00b291" />
+<img width="168" height="159" alt="image" src="https://github.com/user-attachments/assets/a250b7a3-4032-4cc4-8916-30a0694ecf96" />
+
+
 
 
 ## ************************************************************************************************
+
 
 
 
