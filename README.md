@@ -5,7 +5,7 @@
 ---
 
 ***REGISTER PAGE***
-<img width="971" height="903" alt="image" src="https://github.com/user-attachments/assets/4495281f-27ac-45a3-a55a-5d229181669f" />
+<img width="1271" height="896" alt="image" src="https://github.com/user-attachments/assets/976c7a2a-12dc-483d-aed5-29ab969ac896" />
 
 ***LOGIN PAGE***
 <img width="1918" height="910" alt="image" src="https://github.com/user-attachments/assets/c406988e-71d6-411b-b56f-23aca17fc903" />
@@ -145,6 +145,7 @@ Thank you!
 XOXO 
 
 ***
+
 
 
 
