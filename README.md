@@ -144,10 +144,11 @@ GitHub: https://github.com/nitxoxo
 **Thank you!**
 **BYEEE**
 
-<img width="320" height="200" alt="image" src="https://github.com/user-attachments/assets/3c2ba00a-564a-46bb-97bc-d69a4b68e7fc" />
+<img width="220" height="100" alt="image" src="https://github.com/user-attachments/assets/3c2ba00a-564a-46bb-97bc-d69a4b68e7fc" />
 
 
 ***
+
 
 
 
