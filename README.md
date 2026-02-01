@@ -56,9 +56,10 @@ On your VS Code or Local command promt and Enter the following:
 
 ---
 
-### 👉 YOU CAN ALSO VISIT MY LIVE WEBSITE ON RENDER-
+###  👉 YOU CAN ALSO VISIT MY LIVE WEBSITE ON RENDER-
 https://todo-app-lq4o.onrender.com/register/
-(Note- This URL is hosted by a free service therefore due to inactivity, it might cold start and take about 30-60 seconds to enter the webpage. Please be patient! 😺)
+
+(**Note**- This URL is hosted by a free service therefore due to inactivity, it might cold start and take about 30-60 seconds to enter the webpage. Please be patient! 😺)
 
 ---
 
@@ -143,6 +144,7 @@ Thank you!
 XOXO 
 
 ***
+
 
 
 
