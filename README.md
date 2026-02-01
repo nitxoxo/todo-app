@@ -4,16 +4,14 @@
 
 ---
 
-***REGISTER PAGE***
+### ***REGISTER PAGE***
 <img width="1271" height="896" alt="image" src="https://github.com/user-attachments/assets/976c7a2a-12dc-483d-aed5-29ab969ac896" />
 
-
-***LOGIN PAGE***
+### ***LOGIN PAGE***
 <img width="1217" height="672" alt="image" src="https://github.com/user-attachments/assets/3a822d47-8a0c-48b3-9118-9a7f3e35712b" />
 
-
-***MAIN PAGE TO MANAGE TASKS***
-<img width="1918" height="901" alt="image" src="https://github.com/user-attachments/assets/02194d08-6ac3-4c6b-b42b-d6142d20cd55" />
+### ***MAIN PAGE TO MANAGE TASKS***
+<img width="1918" height="907" alt="image" src="https://github.com/user-attachments/assets/1bee856c-a62a-4569-980a-a8ac14835ba5" />
 
 ---
 
@@ -80,12 +78,17 @@ This application helps users manage daily tasks efficiently by allowing them to 
 
 ## 🚀 Features
 
-- ➕ Add new tasks  
-- ✏️ Edit existing tasks  
+- ➕ Add new tasks
+- ⏱ Select Due Date and Priority
+- 🌱 Add Description to Tasks
+- 📌 Filter Tasks based on priority or status
+- 🚀 Progress Ring to track tasks better
+- ✏️ Edit existing tasks 
 - ❌ Delete tasks  
 - ✅ Mark tasks as completed  
 - 🔄 Instant task updates  
-- 🎨 Clean, simple and cute user interface  
+- 🎨 Clean, simple and cute user interface
+- 🌸 Motivational and cute quote for a fun experience
 
 ---
 
@@ -151,6 +154,7 @@ GitHub: https://github.com/nitxoxo
 
 
 ## ************************
+
 
 
 
